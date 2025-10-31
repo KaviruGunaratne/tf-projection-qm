@@ -48,7 +48,7 @@ class Metric(ABC):
     def measure(self, *args, **kwargs):
         """Entry point to calculate the metric from input tensors
 
-        Base classes must implement this function by calling self._measure_impl
+        Derived classes must implement this function by calling self._measure_impl
         with the correct set of arguments (those of their corresponding _fn). When
         calling self._measure_impl, base classes should provide all parameters
         necessary for the metric computation. These parameters should be part of
@@ -59,7 +59,7 @@ class Metric(ABC):
     def measure_from_dict(self, args: dict):
         """Entry point to calculate the metric from a dictionary argument
 
-        Base classes should implement this by calling self.measure with the
+        Derived classes should implement this by calling self.measure with the
         correct elements extracted from args. For example,
         self.measure(args["X"], args["y"]).
         """
